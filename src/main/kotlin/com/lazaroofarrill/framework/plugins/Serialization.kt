@@ -1,4 +1,4 @@
-package com.lazaroofarrill.plugins
+package com.lazaroofarrill.framework.plugins
 
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*

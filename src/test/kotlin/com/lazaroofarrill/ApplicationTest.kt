@@ -1,6 +1,6 @@
 package com.lazaroofarrill
 
-import com.lazaroofarrill.plugins.configureRouting
+import com.lazaroofarrill.framework.plugins.configureRouting
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
@@ -12,15 +12,11 @@ class ApplicationTest {
     @Test
     fun testRoot() = testApplication {
         application {
-            configureRouting()
+            configureRouting(appModules)
         }
         client.get("/").apply {
             assertEquals(HttpStatusCode.OK, status)
             assertEquals("Hello World!", bodyAsText())
-        }
-        client.get("/lol").apply {
-            assertEquals(HttpStatusCode.OK, status)
-            assertEquals("lol World!", bodyAsText())
         }
     }
 }
