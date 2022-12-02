@@ -22,7 +22,6 @@ fun main() {
 val appModules = listOf(articlesModule)
 
 fun Application.module() {
-    configureSerialization()
     configureTemplating()
     configureRouting(appModules)
 }
