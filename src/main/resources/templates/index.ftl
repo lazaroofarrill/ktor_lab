@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="articles" type="kotlin.collections.List<com.example.models.Article>" -->
+<#-- @ftlvariable name="articles" type="kotlin.collections.List<com.lazaroofarrill.modules.articles.entities.Article>" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
