@@ -12,7 +12,7 @@ private constructor(val id: Int, var title: String, var body: String) {
     }
 }
 
-private val articlesStorage = mutableListOf(
+private val articleStorage = mutableListOf(
     Article.newEntry(
         "The drive to develop!",
         "...it's what keeps me going."
@@ -20,9 +20,31 @@ private val articlesStorage = mutableListOf(
 )
 
 object ArticleRepository {
-    val articles get() = articlesStorage.toList()
+    val articles get() = articleStorage.toList()
 
-    fun addArticle(article: Article) {
-        articlesStorage.add(article)
+    fun addArticle(article: Article): Article {
+        articleStorage.add(article)
+
+        return articleStorage.last()
+    }
+
+    fun getArticle(id: Int): Article? {
+        return this.articles.find { it.id == id }
+    }
+
+    fun updateArticle(id: Int, title: String?, body: String?): Boolean {
+        val idx = articleStorage.indexOf(getArticle(id) ?: return false)
+        title?.let {
+            articleStorage[idx].title = it
+        }
+        body?.let {
+            articleStorage[idx].body = it
+        }
+
+        return true
+    }
+
+    fun removeArticle(id: Int): Boolean {
+        return articleStorage.remove(getArticle(id))
     }
 }
