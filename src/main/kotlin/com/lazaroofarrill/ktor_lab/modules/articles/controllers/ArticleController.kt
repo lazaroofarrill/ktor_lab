@@ -12,7 +12,7 @@ import io.ktor.server.routing.*
 import io.ktor.server.util.*
 
 data class ArticleController(val articleService: ArticleService) : IController {
-    override val controller: Router = {
+    override val route: Router = {
 
         route("articles") {
             get {

@@ -36,7 +36,7 @@ fun Application.configureRouting(modules: List<Module>) {
         modules.forEach { module ->
             route(module.prefix ?: "") {
                 module.controllers.forEach { controller ->
-                    controller.controller(this)
+                    controller.route(this)
                 }
             }
         }
