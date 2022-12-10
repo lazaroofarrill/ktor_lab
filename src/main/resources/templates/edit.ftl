@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="article" type="com.lazaroofarrill.modules.articles.entities.Article" -->
+<#-- @ftlvariable name="article" type="com.lazaroofarrill.ktor_lab.modules.articles.entities.Article" -->
 <#import "_layout.ftl" as layout />
 <@layout.header>
     <div>

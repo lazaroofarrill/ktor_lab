@@ -1,4 +1,4 @@
-package com.lazaroofarrill.framework.plugins
+package com.lazaroofarrill.ktor_lab.framework.plugins
 
 import freemarker.cache.ClassTemplateLoader
 import freemarker.core.HTMLOutputFormat

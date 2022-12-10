@@ -1,6 +1,6 @@
-package com.lazaroofarrill.framework.plugins
+package com.lazaroofarrill.ktor_lab.framework.plugins
 
-import com.lazaroofarrill.framework.Module
+import com.lazaroofarrill.ktor_lab.framework.Module
 import io.ktor.server.application.*
 import io.ktor.server.http.content.*
 import io.ktor.server.response.*
@@ -14,7 +14,7 @@ fun Application.configureRouting(modules: List<Module>) {
         modules.forEach { module ->
             route(module.prefix ?: "") {
                 module.controllers.forEach { controller ->
-                    controller()
+                    controller.controller(this)
                 }
             }
         }

@@ -1,6 +1,6 @@
-package com.lazaroofarrill
+package com.lazaroofarrill.ktor_lab
 
-import com.lazaroofarrill.framework.plugins.configureRouting
+import com.lazaroofarrill.ktor_lab.framework.plugins.configureRouting
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
