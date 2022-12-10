@@ -1,6 +1,7 @@
 package com.lazaroofarrill.ktor_lab.modules.articles.controllers
 
 import com.lazaroofarrill.ktor_lab.framework.interfaces.IController
+import com.lazaroofarrill.ktor_lab.framework.interfaces.Router
 import com.lazaroofarrill.ktor_lab.modules.articles.entities.Article
 import com.lazaroofarrill.ktor_lab.modules.articles.services.ArticleService
 import io.ktor.server.application.*
@@ -11,7 +12,7 @@ import io.ktor.server.routing.*
 import io.ktor.server.util.*
 
 data class ArticleController(val articleService: ArticleService) : IController {
-    override val controller = fun Route.(): Route {
+    override val controller: Router = {
 
         route("articles") {
             get {
@@ -81,7 +82,5 @@ data class ArticleController(val articleService: ArticleService) : IController {
                 }
             }
         }
-
-        return this
     }
 }

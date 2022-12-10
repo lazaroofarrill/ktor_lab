@@ -31,10 +31,11 @@ class ArticleDAO : IArticleDAO {
                 ?.let(::resultRowToArticle)
         }
 
+
     override suspend fun editArticle(
         id: Int,
-        title: String?,
-        body: String?
+        title: String,
+        body: String
     ): Boolean = dbQuery {
         Articles.update({ Articles.id eq id }) { rowToUpdate ->
             title?.let {

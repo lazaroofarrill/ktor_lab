@@ -19,7 +19,7 @@ data class ArticleService(val articleDao: IArticleDAO) : ISeed {
         return articleDao.article(id)
     }
 
-    suspend fun updateArticle(id: Int, title: String?, body: String?): Boolean {
+    suspend fun updateArticle(id: Int, title: String, body: String): Boolean {
         return articleDao.editArticle(id, title, body)
     }
 
@@ -29,12 +29,14 @@ data class ArticleService(val articleDao: IArticleDAO) : ISeed {
 
     override fun seed() {
         runBlocking {
-            insertArticle(
-                Article.newEntry(
-                    "the way of kings",
-                    "the sound of Roshar is true and mighty"
+            if (getArticles().isEmpty()) {
+                insertArticle(
+                    Article.newEntry(
+                        "the way of kings",
+                        "the sound of Roshar is true and mighty"
+                    )
                 )
-            )
+            }
         }
     }
 }

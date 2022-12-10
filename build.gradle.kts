@@ -9,10 +9,12 @@ val h2_version: String by project
 val hikaricp_version: String by project
 val ehcache_version: String by project
 
+val postgresql_version: String by project
+
 plugins {
     application
     kotlin("jvm") version "1.7.22"
-    id("io.ktor.plugin") version "2.1.3"
+    id("io.ktor.plugin") version "2.2.1"
     id("org.jetbrains.kotlin.plugin.serialization") version "1.7.22"
 }
 
@@ -48,6 +50,8 @@ dependencies {
 
     implementation("com.zaxxer:HikariCP:$hikaricp_version")
     implementation("org.ehcache:ehcache:$ehcache_version")
+
+    implementation("org.postgresql:postgresql:$postgresql_version")
 }
 
 application {
